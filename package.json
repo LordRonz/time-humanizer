@@ -4,7 +4,7 @@
   "homepage": "https://www.aaronct.dev/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lordronz/time-humanizer.git"
+    "url": "https://github.com/LordRonz/time-humanizer"
   },
   "keywords": [
     "time",
