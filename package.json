@@ -1,6 +1,19 @@
 {
   "name": "time-humanizer",
   "version": "0.0.2",
+  "homepage": "https://www.aaronct.dev/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lordronz/time-humanizer.git"
+  },
+  "keywords": [
+    "time",
+    "human",
+    "time-humanizer",
+    "utility",
+    "date",
+    "datetime"
+  ],
   "description": "",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
@@ -15,7 +28,6 @@
     "coverage": "vitest run --coverage",
     "release": "commit-and-tag-version"
   },
-  "keywords": [],
   "author": "Aaron Christopher Tanhar",
   "license": "MIT",
   "devDependencies": {
