@@ -58,3 +58,61 @@ export function toTimestamp(humanReadable: string): number {
 
   return now - delta * multiplier * 1000;
 }
+
+export type HumanizerOptions = {
+  threshold?: number; // Minimum duration in milliseconds to round off
+  locale?: string; // Language for the output (default: 'en')
+  format?: "long" | "short"; // Output style (default: 'long')
+};
+
+const locales: Record<
+  string,
+  Record<"past" | "future", (value: number, unit: string) => string>
+> = {
+  en: {
+    past: (value, unit) => `${value} ${unit}${value > 1 ? "s" : ""} ago`,
+    future: (value, unit) => `in ${value} ${unit}${value > 1 ? "s" : ""}`,
+  },
+  es: {
+    past: (value, unit) => `hace ${value} ${unit}${value > 1 ? "s" : ""}`,
+    future: (value, unit) => `en ${value} ${unit}${value > 1 ? "s" : ""}`,
+  },
+  fr: {
+    past: (value, unit) => `il y a ${value} ${unit}${value > 1 ? "s" : ""}`,
+    future: (value, unit) => `dans ${value} ${unit}${value > 1 ? "s" : ""}`,
+  },
+  // Add more locales here
+};
+
+const defaultUnits = [
+  { unit: "year", ms: 365 * 24 * 60 * 60 * 1000 },
+  { unit: "month", ms: 30 * 24 * 60 * 60 * 1000 },
+  { unit: "week", ms: 7 * 24 * 60 * 60 * 1000 },
+  { unit: "day", ms: 24 * 60 * 60 * 1000 },
+  { unit: "hour", ms: 60 * 60 * 1000 },
+  { unit: "minute", ms: 60 * 1000 },
+  { unit: "second", ms: 1000 },
+];
+
+export function humanizeDuration(
+  duration: number,
+  options: HumanizerOptions = {},
+): string {
+  const { threshold = 1, locale = "en", format = "long" } = options;
+
+  const absDuration = Math.abs(duration);
+  const isPast = duration < 0;
+
+  for (const { unit, ms } of defaultUnits) {
+    const value = Math.floor(absDuration / ms);
+    if (value >= threshold) {
+      const localized = locales[locale] ?? locales["en"];
+      return isPast
+        ? localized.past(value, unit)
+        : localized.future(value, unit);
+    }
+  }
+
+  // Default to 'now' for small durations
+  return isPast ? "just now" : "soon";
+}
