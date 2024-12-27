@@ -1,7 +1,7 @@
 # ⏳ Time Humanizer - Make Time More Human!
 
 [![npm version](https://img.shields.io/npm/v/time-humanizer)](https://www.npmjs.com/package/time-humanizer)
-[![build](https://img.shields.io/github/actions/workflow/status/aaronchristopher/time-humanizer/build.yml?branch=main)](https://github.com/aaronchristopher/time-humanizer/actions)
+[![build](https://img.shields.io/github/actions/workflow/status/lordronz/time-humanizer/publish.yml?branch=main)](https://github.com/lordronz/time-humanizer/actions)
 [![license](https://img.shields.io/npm/l/time-humanizer)](https://opensource.org/licenses/MIT)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/time-humanizer)](https://bundlephobia.com/package/time-humanizer)
 
