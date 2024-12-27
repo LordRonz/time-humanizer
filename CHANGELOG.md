@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.3](https://github.com/lordronz/time-humanizer/compare/v0.0.2...v0.0.3) (2024-12-27)
+
+
+### Features
+
+* adjust time humanizer ([9eda8e1](https://github.com/lordronz/time-humanizer/commit/9eda8e172b2ccddf03c2ab90060a0b82ff5a201c))
+
 ## [0.0.2](https://github.com/LordRonz/time-humanizer/compare/v0.0.1...v0.0.2) (2024-12-27)
 
 
