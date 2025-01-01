@@ -32,7 +32,7 @@
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-typescript": "^12.1.2",
-    "@types/node": "^22.10.2",
+    "@types/node": "^22.10.3",
     "@vitest/coverage-v8": "^2.1.8",
     "commit-and-tag-version": "^12.5.0",
     "rollup": "^4.29.1",
